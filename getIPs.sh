@@ -32,12 +32,12 @@ do
 	if [ $url ]
 	then
 		echo $url Has IP
-		echo $url Has IP >> $domain-result.txt
 		
 		host $url | grep "has address" | cut -d " " -f4
+		
 		host $url | grep "has address" | cut -d " " -f4 >> $domain-result.txt
+		
 		echo ------
-		echo ------ >> $domain-result.txt
 	else
 		echo "Error, may be there are no sub domains."
 		exit
